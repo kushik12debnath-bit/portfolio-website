@@ -15,43 +15,49 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>TI Engineer</h4>
+                <h5>CELL N SOFT TELECOM PRIVET LIMITED</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2017</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Commissioned telecom infrastructure and configured specialized hardware (BTS, load cells), managing strategic site surveys and field documentation.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Cell Leader</h4>
+                <h5>Molex india Pvt. Ltd.</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>2020</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+            Operated advanced automated machinery and executed precision soldering and testing to optimize manufacturing workflows and ensure zero-defect electrical assemblies.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Team Lead</h4>
+                <h5>Elunico IT Solutins</h5>
+              </div>
+              <h3>2022</h3>
+            </div>
+            <p>
+              Optimized automated wire processing, precision soldering, and quality testing to ensure zero-defect manufacturing workflows.
+            </p>
+          </div>
+           <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>IOT& Calibration Engineer</h4>
+                <h5>Electro Meter Corporation</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Led embedded IoT firmware development and executed NABL-compliant industrial instrument calibrations.
             </p>
           </div>
         </div>
