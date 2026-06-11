@@ -2,14 +2,13 @@
 
 :root {
   font-family: "Geist", sans-serif;
-
   font-optical-sizing: auto;
   font-style: normal;
   line-height: 1.5;
   scroll-behavior: smooth;
   color-scheme: light dark;
   color: #eae5ec;
-  background-color: var(--backgroundColor);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,65 +17,86 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  --accentColor: #c2a4ff;
-  --backgroundColor: #0b080c;
+
+  --accent: #c2a4ff;
+  --accent2: #ff6b9d;
+  --accent3: #6bcbff;
+  --bg: #0a080c;
+  --bg2: #121016;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glassBorder: rgba(255, 255, 255, 0.08);
+  --textPrimary: #eae5ec;
+  --textSecondary: #8a8690;
+  --gradient1: #c2a4ff;
+  --gradient2: #ff6b9d;
+  --gradient3: #6bcbff;
   --vh: 100vh;
   --vh: 100svh;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: "Geist", sans-serif;
 }
-html.lenis {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--accentColor);
-}
-main {
-  opacity: 1;
-  transition: 0.3s;
-}
-.main-active {
-  opacity: 0;
-  animation: fadeIn 1s 1;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
-  }
-}
+
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+a { color: inherit; text-decoration: inherit; }
+a:hover { color: var(--accent); }
+main { opacity: 1; transition: 0.3s; }
+.main-active { opacity: 0; animation: fadeIn 1s 1 forwards; }
+@keyframes fadeIn { 100% { opacity: 1; } }
+
 body {
   margin: 0;
   height: auto;
-  background-color: #000;
+  background-color: var(--bg);
   flex-grow: 1;
   --cWidth: calc(100% - 30px);
   --cMaxWidth: 1920px;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 0% 20%, rgba(194, 164, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 100% 40%, rgba(255, 107, 157, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 50% 80%, rgba(107, 203, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .main-body {
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .container-main {
@@ -90,15 +110,8 @@ body {
   margin: auto;
   position: relative;
 }
-.split-line {
-  overflow: hidden;
-}
-.split-h2 {
-  overflow: hidden;
-  display: flex;
-  white-space: nowrap;
-  flex-wrap: nowrap;
-}
+.split-line { overflow: hidden; }
+.split-h2 { overflow: hidden; display: flex; white-space: nowrap; flex-wrap: nowrap; }
 
 .techstack {
   width: 100%;
@@ -108,9 +121,8 @@ body {
   margin-top: 50px;
   margin-bottom: -100px;
 }
-
 .techstack h2 {
-  font-size: 80px;
+  font-size: clamp(40px, 5vw, 80px);
   text-align: center;
   position: absolute;
   width: 100%;
@@ -118,15 +130,15 @@ body {
   left: 0;
   font-weight: 400;
   text-transform: uppercase;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    --cWidth: 94%;
-  }
+  body { --cWidth: 94%; }
 }
 @media screen and (max-width: 900px) {
-  .techstack h2 {
-    font-size: 40px;
-  }
+  .techstack h2 { font-size: 40px; }
 }
