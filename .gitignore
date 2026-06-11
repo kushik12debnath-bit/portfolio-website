@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+
+# Nested duplicate directory
+Portfolio-Website/
 
 # Editor directories and files
 .vscode/*

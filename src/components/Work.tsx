@@ -3,6 +3,7 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { assetPath } from "../utils";
 
 gsap.registerPlugin(useGSAP);
 
@@ -67,7 +68,7 @@ const Work = () => {
                 <h4>Tools and features</h4>
                 <p>Javascript, TypeScript, React, Threejs</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage image={assetPath("/images/placeholder.webp")} alt="" />
             </div>
           ))}
         </div>
