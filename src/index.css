@@ -97,6 +97,12 @@ body::before {
   overflow-x: hidden;
   position: relative;
   z-index: 1;
+  background: transparent;
+}
+
+#smooth-wrapper, #smooth-content {
+  position: relative;
+  z-index: 1;
 }
 
 .container-main {
