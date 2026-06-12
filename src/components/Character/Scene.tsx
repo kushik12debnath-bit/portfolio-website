@@ -16,7 +16,7 @@ function Character() {
 
   return (
     <group ref={ref}>
-      <primitive object={scene} scale={0.9} position={[0, -1, 0]} />
+      <primitive object={scene} scale={0.9} position={[0, -0.8, 0]} />
     </group>
   );
 }
@@ -24,7 +24,7 @@ function Character() {
 function BackgroundScene() {
   return (
     <Canvas
-      camera={{ position: [0, 0.5, 6], fov: 50 }}
+      camera={{ position: [0, 0.5, 10], fov: 45 }}
       gl={{ alpha: false, antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.5 }}
       style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 0, pointerEvents: "none" }}
     >
@@ -36,7 +36,7 @@ function BackgroundScene() {
       <Suspense fallback={null}>
         <Character />
         <Environment files={assetPath("/models/char_enviorment.hdr")} environmentIntensity={0.3} />
-        <ContactShadows position={[0, -1.5, 0]} opacity={0.3} scale={6} blur={2} />
+        <ContactShadows position={[0, -1.3, 0]} opacity={0.3} scale={6} blur={2} />
       </Suspense>
     </Canvas>
   );
